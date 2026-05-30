@@ -72,7 +72,14 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter word to search (press Enter to search)");
+        searchField.getAccessibleContext().setAccessibleName("Search Input");
+        searchField.getAccessibleContext().setAccessibleDescription("Enter the word you want to look up");
+
         searchButton = new JButton("Search");
+        searchButton.setToolTipText("Search for the entered word");
+        searchButton.getAccessibleContext().setAccessibleName("Search Button");
+        searchButton.getAccessibleContext().setAccessibleDescription("Click to search for the word entered in the text field");
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);

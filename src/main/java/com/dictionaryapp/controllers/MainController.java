@@ -25,6 +25,7 @@ public class MainController {
     private void initializeController() {
         // Initialize event listeners
         mainView.getSearchButton().addActionListener(e -> handleSearch());
+        mainView.getSearchField().addActionListener(e -> handleSearch()); // Add Enter key support
         mainView.getFavoriteButton().addActionListener(e -> handleToggleFavorite());
         mainView.getQuizButton().addActionListener(e -> startQuiz());
         
