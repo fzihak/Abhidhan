@@ -119,9 +119,13 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         
         favoriteButton = new JButton("★ Favorite");
+        favoriteButton.setToolTipText("Add this word to your favorites");
         quizButton = new JButton("Start Quiz");
+        quizButton.setToolTipText("Start a quiz with your favorite words");
         pronunciationButton = new JButton("🔊 Pronounce");
+        pronunciationButton.setToolTipText("Listen to the pronunciation of this word");
         languageToggle = new JToggleButton("EN/বাং");
+        languageToggle.setToolTipText("Toggle between English and Bengali dictionary");
         
         panel.add(favoriteButton);
         panel.add(pronunciationButton);
