@@ -1,0 +1,3 @@
+## 2024-06-07 - Java Swing Keyboard Accessibility & Screen Readers
+**Learning:** In Java Swing applications, keyboard accessibility and screen reader support are achieved through specific component properties rather than HTML ARIA attributes. Setting `setToolTipText()` acts similarly to `aria-label` or `title` by providing descriptive text for screen readers and visual hover hints. Additionally, assigning `setMnemonic()` (e.g., using `KeyEvent.VK_*`) provides essential keyboard shortcuts for interacting with buttons and menus without a mouse.
+**Action:** Always ensure critical interactive elements in Swing components (like buttons, text fields, and toggles) have descriptive tooltips and unique mnemonics to guarantee proper accessibility and keyboard navigation.
