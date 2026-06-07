@@ -72,7 +72,11 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search");
+
         searchButton = new JButton("Search");
+        searchButton.setToolTipText("Search for the entered word");
+        searchButton.setMnemonic(java.awt.event.KeyEvent.VK_S);
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
@@ -119,9 +123,20 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         
         favoriteButton = new JButton("★ Favorite");
+        favoriteButton.setToolTipText("Add to or remove from favorites");
+        favoriteButton.setMnemonic(java.awt.event.KeyEvent.VK_F);
+
         quizButton = new JButton("Start Quiz");
+        quizButton.setToolTipText("Start a vocabulary quiz");
+        quizButton.setMnemonic(java.awt.event.KeyEvent.VK_Q);
+
         pronunciationButton = new JButton("🔊 Pronounce");
+        pronunciationButton.setToolTipText("Hear pronunciation");
+        pronunciationButton.setMnemonic(java.awt.event.KeyEvent.VK_P);
+
         languageToggle = new JToggleButton("EN/বাং");
+        languageToggle.setToolTipText("Toggle language between English and Bengali");
+        languageToggle.setMnemonic(java.awt.event.KeyEvent.VK_L);
         
         panel.add(favoriteButton);
         panel.add(pronunciationButton);
