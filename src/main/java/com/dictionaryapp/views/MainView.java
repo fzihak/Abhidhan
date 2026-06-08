@@ -72,7 +72,9 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search");
         searchButton = new JButton("Search");
+        searchButton.setToolTipText("Search for the entered word");
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
@@ -119,9 +121,13 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         
         favoriteButton = new JButton("★ Favorite");
+        favoriteButton.setToolTipText("Toggle favorite status for this word");
         quizButton = new JButton("Start Quiz");
+        quizButton.setToolTipText("Start a vocabulary quiz");
         pronunciationButton = new JButton("🔊 Pronounce");
+        pronunciationButton.setToolTipText("Play audio pronunciation");
         languageToggle = new JToggleButton("EN/বাং");
+        languageToggle.setToolTipText("Toggle between English and Bengali");
         
         panel.add(favoriteButton);
         panel.add(pronunciationButton);
@@ -136,6 +142,7 @@ public class MainView extends JFrame {
         
         // File Menu
         JMenu fileMenu = new JMenu("File");
+        fileMenu.setMnemonic(java.awt.event.KeyEvent.VK_F);
         JMenuItem exportItem = new JMenuItem("Export Favorites");
         JMenuItem importItem = new JMenuItem("Import Data");
         JMenuItem exitItem = new JMenuItem("Exit");
@@ -146,6 +153,7 @@ public class MainView extends JFrame {
         
         // Settings Menu
         JMenu settingsMenu = new JMenu("Settings");
+        settingsMenu.setMnemonic(java.awt.event.KeyEvent.VK_S);
         JMenuItem preferencesItem = new JMenuItem("Preferences");
         JMenuItem syncItem = new JMenuItem("Sync Settings");
         settingsMenu.add(preferencesItem);
@@ -153,6 +161,7 @@ public class MainView extends JFrame {
         
         // Help Menu
         JMenu helpMenu = new JMenu("Help");
+        helpMenu.setMnemonic(java.awt.event.KeyEvent.VK_H);
         JMenuItem aboutItem = new JMenuItem("About");
         helpMenu.add(aboutItem);
         
