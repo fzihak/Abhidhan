@@ -1,0 +1,3 @@
+## 2026-06-09 - Java Swing Accessibility Patterns
+**Learning:** In Java Swing desktop applications, keyboard accessibility (equivalent to ARIA labels and focus states in web) is critically achieved using `setToolTipText()` to provide text for screen readers and `setMnemonic()` to enable keyboard navigation. It is also important to ensure mnemonic keys are unique across the same view to prevent shortcut conflicts (e.g., using `Alt+T` for Settings instead of `Alt+S`, which is reserved for Search).
+**Action:** Always verify unique mnemonic assignments when adding keyboard navigation to Java Swing components.
