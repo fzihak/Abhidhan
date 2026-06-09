@@ -5,6 +5,7 @@ import com.dictionaryapp.models.Word;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.border.EmptyBorder;
@@ -72,7 +73,10 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search");
         searchButton = new JButton("Search");
+        searchButton.setToolTipText("Search for a word");
+        searchButton.setMnemonic(KeyEvent.VK_S);
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
@@ -119,9 +123,17 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         
         favoriteButton = new JButton("★ Favorite");
+        favoriteButton.setToolTipText("Toggle favorite status");
+        favoriteButton.setMnemonic(KeyEvent.VK_A);
         quizButton = new JButton("Start Quiz");
+        quizButton.setToolTipText("Start a vocabulary quiz");
+        quizButton.setMnemonic(KeyEvent.VK_Q);
         pronunciationButton = new JButton("🔊 Pronounce");
+        pronunciationButton.setToolTipText("Listen to word pronunciation");
+        pronunciationButton.setMnemonic(KeyEvent.VK_P);
         languageToggle = new JToggleButton("EN/বাং");
+        languageToggle.setToolTipText("Toggle between English and Bengali UI");
+        languageToggle.setMnemonic(KeyEvent.VK_L);
         
         panel.add(favoriteButton);
         panel.add(pronunciationButton);
@@ -136,9 +148,13 @@ public class MainView extends JFrame {
         
         // File Menu
         JMenu fileMenu = new JMenu("File");
+        fileMenu.setMnemonic(KeyEvent.VK_F);
         JMenuItem exportItem = new JMenuItem("Export Favorites");
+        exportItem.setMnemonic(KeyEvent.VK_E);
         JMenuItem importItem = new JMenuItem("Import Data");
+        importItem.setMnemonic(KeyEvent.VK_I);
         JMenuItem exitItem = new JMenuItem("Exit");
+        exitItem.setMnemonic(KeyEvent.VK_X);
         fileMenu.add(exportItem);
         fileMenu.add(importItem);
         fileMenu.addSeparator();
@@ -146,14 +162,19 @@ public class MainView extends JFrame {
         
         // Settings Menu
         JMenu settingsMenu = new JMenu("Settings");
+        settingsMenu.setMnemonic(KeyEvent.VK_T); // Using T for Settings to avoid conflict with S
         JMenuItem preferencesItem = new JMenuItem("Preferences");
+        preferencesItem.setMnemonic(KeyEvent.VK_R);
         JMenuItem syncItem = new JMenuItem("Sync Settings");
+        syncItem.setMnemonic(KeyEvent.VK_Y);
         settingsMenu.add(preferencesItem);
         settingsMenu.add(syncItem);
         
         // Help Menu
         JMenu helpMenu = new JMenu("Help");
+        helpMenu.setMnemonic(KeyEvent.VK_H);
         JMenuItem aboutItem = new JMenuItem("About");
+        aboutItem.setMnemonic(KeyEvent.VK_B);
         helpMenu.add(aboutItem);
         
         menuBar.add(fileMenu);
