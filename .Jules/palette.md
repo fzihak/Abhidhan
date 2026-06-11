@@ -1,0 +1,3 @@
+## 2024-06-11 - Java Swing Keyboard Accessibility & Mnemonic Collisions
+**Learning:** In Java Swing, equivalent functionality to HTML ARIA attributes for keyboard accessibility is achieved by using `setToolTipText()` for screen reader hints/descriptions and `setMnemonic()` for keyboard navigation shortcuts. However, when assigning mnemonics, it is critical to avoid collisions with standard OS or application menu shortcuts (e.g., using `Alt+V` for "Favorite" instead of `Alt+F` to prevent overriding the standard "File" menu).
+**Action:** Always map accessibility shortcuts (mnemonics) in Java Swing applications intentionally, cross-checking against common menu shortcuts in the same view to ensure smooth keyboard navigation without disruptions.
