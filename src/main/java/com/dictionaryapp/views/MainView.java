@@ -72,7 +72,11 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search");
+
         searchButton = new JButton("Search");
+        searchButton.setToolTipText("Search for the entered word");
+        searchButton.setMnemonic(java.awt.event.KeyEvent.VK_S);
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
@@ -119,9 +123,20 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         
         favoriteButton = new JButton("★ Favorite");
+        favoriteButton.setToolTipText("Add or remove current word from favorites");
+        favoriteButton.setMnemonic(java.awt.event.KeyEvent.VK_V);
+
         quizButton = new JButton("Start Quiz");
+        quizButton.setToolTipText("Start a vocabulary quiz");
+        quizButton.setMnemonic(java.awt.event.KeyEvent.VK_Q);
+
         pronunciationButton = new JButton("🔊 Pronounce");
+        pronunciationButton.setToolTipText("Play pronunciation audio for the word");
+        pronunciationButton.setMnemonic(java.awt.event.KeyEvent.VK_P);
+
         languageToggle = new JToggleButton("EN/বাং");
+        languageToggle.setToolTipText("Toggle between English and Bengali interface");
+        languageToggle.setMnemonic(java.awt.event.KeyEvent.VK_L);
         
         panel.add(favoriteButton);
         panel.add(pronunciationButton);
@@ -136,6 +151,7 @@ public class MainView extends JFrame {
         
         // File Menu
         JMenu fileMenu = new JMenu("File");
+        fileMenu.setMnemonic(java.awt.event.KeyEvent.VK_F);
         JMenuItem exportItem = new JMenuItem("Export Favorites");
         JMenuItem importItem = new JMenuItem("Import Data");
         JMenuItem exitItem = new JMenuItem("Exit");
@@ -146,6 +162,7 @@ public class MainView extends JFrame {
         
         // Settings Menu
         JMenu settingsMenu = new JMenu("Settings");
+        settingsMenu.setMnemonic(java.awt.event.KeyEvent.VK_E);
         JMenuItem preferencesItem = new JMenuItem("Preferences");
         JMenuItem syncItem = new JMenuItem("Sync Settings");
         settingsMenu.add(preferencesItem);
@@ -153,6 +170,7 @@ public class MainView extends JFrame {
         
         // Help Menu
         JMenu helpMenu = new JMenu("Help");
+        helpMenu.setMnemonic(java.awt.event.KeyEvent.VK_H);
         JMenuItem aboutItem = new JMenuItem("About");
         helpMenu.add(aboutItem);
         
