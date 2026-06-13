@@ -1,0 +1,3 @@
+## 2026-06-13 - Java Swing Keyboard Accessibility
+**Learning:** In Java Swing, screen reader accessibility is often mapping via standard component properties like `.setToolTipText()`, and keyboard shortcut navigation relies on unique `.setMnemonic()` definitions without needing complex KeyBindings for simple buttons. It is critical to ensure mnemonics are unique within the same view to prevent shortcut conflicts (e.g., using Alt+V for Favorites to avoid conflict with Alt+F for File menus).
+**Action:** Always map basic actions with mnemonics and tooltips out-of-the-box for Swing UIs to ensure a baseline of keyboard/screen reader access.
