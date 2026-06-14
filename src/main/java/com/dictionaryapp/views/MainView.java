@@ -72,7 +72,11 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search");
+
         searchButton = new JButton("Search");
+        searchButton.setToolTipText("Search for the entered word (Alt+S)");
+        searchButton.setMnemonic(java.awt.event.KeyEvent.VK_S);
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
@@ -119,9 +123,19 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         
         favoriteButton = new JButton("★ Favorite");
+        favoriteButton.setToolTipText("Add or remove word from favorites");
+        // No mnemonic for favorite to avoid conflict with File menu (Alt+F)
+
         quizButton = new JButton("Start Quiz");
+        quizButton.setToolTipText("Start a vocabulary quiz (Alt+Q)");
+        quizButton.setMnemonic(java.awt.event.KeyEvent.VK_Q);
+
         pronunciationButton = new JButton("🔊 Pronounce");
+        pronunciationButton.setToolTipText("Listen to word pronunciation (Alt+P)");
+        pronunciationButton.setMnemonic(java.awt.event.KeyEvent.VK_P);
+
         languageToggle = new JToggleButton("EN/বাং");
+        languageToggle.setToolTipText("Toggle between English and Bengali dictionary");
         
         panel.add(favoriteButton);
         panel.add(pronunciationButton);
