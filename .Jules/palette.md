@@ -1,0 +1,3 @@
+## 2024-05-24 - Java Swing Accessibility Patterns
+**Learning:** In Java Swing, since HTML ARIA tags are not available, setting `setMnemonic()` and `setToolTipText()` acts as the equivalent for screen readers and keyboard navigation. Using Alt-keys for primary interactive components significantly boosts accessibility for keyboard-only users.
+**Action:** When working on Java Swing codebases without native web accessibility properties, use mnemonics (checking for conflicts like Alt+F for file menus) and tooltips to provide accessibility scaffolding for UI components.
