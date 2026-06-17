@@ -1,0 +1,3 @@
+## 2024-06-17 - Java Swing Keyboard Shortcuts and Screen Reader Support
+**Learning:** In Java Swing desktop applications, keyboard accessibility and screen reader support (which act as the equivalent to HTML ARIA attributes) are achieved by setting component properties such as `setToolTipText()` and `setMnemonic()`. When assigning mnemonics, we must ensure they are unique within the same view to prevent keyboard navigation conflicts, like avoiding standard shortcuts such as Alt+F for File menus.
+**Action:** Use `setToolTipText()` to provide text descriptions for interactive elements, and `setMnemonic(KeyEvent.VK_...)` to add Alt+Key combinations. Be careful to select distinct characters for mnemonics.
