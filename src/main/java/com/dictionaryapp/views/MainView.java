@@ -5,6 +5,7 @@ import com.dictionaryapp.models.Word;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import javax.swing.border.EmptyBorder;
@@ -72,7 +73,10 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search");
         searchButton = new JButton("Search");
+        searchButton.setMnemonic(KeyEvent.VK_S);
+        searchButton.setToolTipText("Search for the word (Alt+S)");
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
@@ -119,9 +123,20 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         
         favoriteButton = new JButton("★ Favorite");
+        favoriteButton.setMnemonic(KeyEvent.VK_V);
+        favoriteButton.setToolTipText("Toggle favorite status (Alt+V)");
+
         quizButton = new JButton("Start Quiz");
+        quizButton.setMnemonic(KeyEvent.VK_Q);
+        quizButton.setToolTipText("Start a new quiz (Alt+Q)");
+
         pronunciationButton = new JButton("🔊 Pronounce");
+        pronunciationButton.setMnemonic(KeyEvent.VK_P);
+        pronunciationButton.setToolTipText("Play pronunciation audio (Alt+P)");
+
         languageToggle = new JToggleButton("EN/বাং");
+        languageToggle.setMnemonic(KeyEvent.VK_L);
+        languageToggle.setToolTipText("Toggle language between English and Bengali (Alt+L)");
         
         panel.add(favoriteButton);
         panel.add(pronunciationButton);

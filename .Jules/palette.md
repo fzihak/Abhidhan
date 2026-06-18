@@ -1,0 +1,3 @@
+## 2024-06-18 - Unique Mnemonics for Java Swing Accessibility
+**Learning:** When adding keyboard accessibility (mnemonics) to Java Swing applications, standard shortcuts like Alt+F (typically used for File menus) can conflict with component shortcuts if not careful. For instance, using 'F' for "Favorite" will override or conflict with the File menu.
+**Action:** Always verify standard menu mnemonics (like File, Edit, View) before assigning mnemonics to main UI buttons to ensure unique and non-disruptive keyboard navigation. Assigned 'V' for faVorite instead of 'F'.
