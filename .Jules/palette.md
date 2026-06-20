@@ -1,0 +1,3 @@
+## 2024-06-20 - Mnemonic shortcut conflicts in Java Swing Applications
+**Learning:** When assigning mnemonics in Java Swing using `setMnemonic()`, it's critical to ensure there are no key conflicts within the same view. A conflicting mnemonic can disrupt standard keyboard navigation or render certain shortcuts unusable. For instance, if 'Alt+S' is used for a Search button, it shouldn't also be assigned to a 'Settings' menu.
+**Action:** Always map out existing mnemonics before adding new ones. If a natural initial letter (like 'S' for Settings) conflicts with a more prominent action (like 'S' for Search), select an alternate intuitive letter (like 'E' for sEttings) to preserve complete keyboard navigability.
