@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.KeyEvent;
 import javax.swing.border.EmptyBorder;
 
 public class MainView extends JFrame {
@@ -59,6 +60,9 @@ public class MainView extends JFrame {
         // Add main panel to frame
         add(mainPanel);
 
+        // Set default button to respond to Enter key
+        getRootPane().setDefaultButton(searchButton);
+
         // Add window listener for cleanup
         addWindowListener(new WindowAdapter() {
             @Override
@@ -72,7 +76,10 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search");
         searchButton = new JButton("Search");
+        searchButton.setToolTipText("Search for the word");
+        searchButton.setMnemonic(KeyEvent.VK_S);
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
@@ -119,9 +126,20 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         
         favoriteButton = new JButton("★ Favorite");
+        favoriteButton.setToolTipText("Toggle favorite status for this word");
+        favoriteButton.setMnemonic(KeyEvent.VK_F);
+
         quizButton = new JButton("Start Quiz");
+        quizButton.setToolTipText("Start a new vocabulary quiz");
+        quizButton.setMnemonic(KeyEvent.VK_Q);
+
         pronunciationButton = new JButton("🔊 Pronounce");
+        pronunciationButton.setToolTipText("Listen to the pronunciation");
+        pronunciationButton.setMnemonic(KeyEvent.VK_P);
+
         languageToggle = new JToggleButton("EN/বাং");
+        languageToggle.setToolTipText("Toggle between English and Bengali interfaces");
+        languageToggle.setMnemonic(KeyEvent.VK_L);
         
         panel.add(favoriteButton);
         panel.add(pronunciationButton);

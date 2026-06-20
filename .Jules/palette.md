@@ -1,0 +1,1 @@
+## 2026-05-31 - Desktop Accessibility Defaults\n**Learning:** In Java Swing desktop apps, basic keyboard accessibility (like 'Enter' to submit) is not automatic for forms/panels, unlike HTML forms.\n**Action:** Always verify if a primary action button is set as the root pane's default button (`getRootPane().setDefaultButton(button)`) to ensure standard keyboard interaction.
