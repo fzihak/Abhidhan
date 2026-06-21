@@ -1,0 +1,3 @@
+## 2024-05-18 - Prevent Keyboard Mnemonic Conflicts in Swing Apps
+**Learning:** In Java Swing, adding keyboard mnemonics to main view buttons can easily conflict with standard menu mnemonics (e.g., using `Alt+F` for a 'Favorite' button conflicts with the standard `Alt+F` for the 'File' menu). It's crucial to map out all mnemonics in a view to ensure unique assignments and avoid disrupting standard navigation patterns.
+**Action:** When adding `setMnemonic` to Swing components for accessibility, first audit existing menu and button mnemonics within the same view. Reassign standard or less critical mnemonics (like changing 'File' to `Alt+I` or 'Favorite' to `Alt+V`) if conflicts arise, prioritizing predictable user interactions.
