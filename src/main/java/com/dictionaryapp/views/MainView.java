@@ -7,6 +7,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
+import java.awt.event.KeyEvent;
 import javax.swing.border.EmptyBorder;
 
 public class MainView extends JFrame {
@@ -72,7 +73,11 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search");
+
         searchButton = new JButton("Search");
+        searchButton.setMnemonic(KeyEvent.VK_S);
+        searchButton.setToolTipText("Search for the entered word (Alt+S)");
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
@@ -88,6 +93,7 @@ public class MainView extends JFrame {
         definitionArea.setEditable(false);
         definitionArea.setLineWrap(true);
         definitionArea.setWrapStyleWord(true);
+        definitionArea.setToolTipText("English definition of the word");
         JScrollPane englishScroll = new JScrollPane(definitionArea);
         englishScroll.setBorder(BorderFactory.createTitledBorder("English Definition"));
         
@@ -96,6 +102,7 @@ public class MainView extends JFrame {
         bengaliDefinitionArea.setEditable(false);
         bengaliDefinitionArea.setLineWrap(true);
         bengaliDefinitionArea.setWrapStyleWord(true);
+        bengaliDefinitionArea.setToolTipText("Bengali definition of the word");
         JScrollPane bengaliScroll = new JScrollPane(bengaliDefinitionArea);
         bengaliScroll.setBorder(BorderFactory.createTitledBorder("Bengali Definition"));
         
@@ -108,6 +115,7 @@ public class MainView extends JFrame {
     private JPanel createSynonymsPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         synonymsList = new JList<>(new DefaultListModel<>());
+        synonymsList.setToolTipText("List of synonyms");
         JScrollPane scrollPane = new JScrollPane(synonymsList);
         scrollPane.setBorder(BorderFactory.createTitledBorder("Synonyms"));
         panel.add(scrollPane, BorderLayout.CENTER);
@@ -119,9 +127,20 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         
         favoriteButton = new JButton("★ Favorite");
+        favoriteButton.setMnemonic(KeyEvent.VK_V);
+        favoriteButton.setToolTipText("Toggle favorite status for this word (Alt+V)");
+
         quizButton = new JButton("Start Quiz");
+        quizButton.setMnemonic(KeyEvent.VK_Q);
+        quizButton.setToolTipText("Start a vocabulary quiz (Alt+Q)");
+
         pronunciationButton = new JButton("🔊 Pronounce");
+        pronunciationButton.setMnemonic(KeyEvent.VK_P);
+        pronunciationButton.setToolTipText("Play pronunciation audio (Alt+P)");
+
         languageToggle = new JToggleButton("EN/বাং");
+        languageToggle.setMnemonic(KeyEvent.VK_L);
+        languageToggle.setToolTipText("Toggle language between English and Bengali (Alt+L)");
         
         panel.add(favoriteButton);
         panel.add(pronunciationButton);
@@ -136,6 +155,7 @@ public class MainView extends JFrame {
         
         // File Menu
         JMenu fileMenu = new JMenu("File");
+        fileMenu.setMnemonic(KeyEvent.VK_F); // Standard Alt+F
         JMenuItem exportItem = new JMenuItem("Export Favorites");
         JMenuItem importItem = new JMenuItem("Import Data");
         JMenuItem exitItem = new JMenuItem("Exit");
@@ -146,6 +166,7 @@ public class MainView extends JFrame {
         
         // Settings Menu
         JMenu settingsMenu = new JMenu("Settings");
+        settingsMenu.setMnemonic(KeyEvent.VK_E); // Alt+E
         JMenuItem preferencesItem = new JMenuItem("Preferences");
         JMenuItem syncItem = new JMenuItem("Sync Settings");
         settingsMenu.add(preferencesItem);
@@ -153,6 +174,7 @@ public class MainView extends JFrame {
         
         // Help Menu
         JMenu helpMenu = new JMenu("Help");
+        helpMenu.setMnemonic(KeyEvent.VK_H); // Alt+H
         JMenuItem aboutItem = new JMenuItem("About");
         helpMenu.add(aboutItem);
         
