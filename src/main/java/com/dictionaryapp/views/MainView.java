@@ -59,6 +59,9 @@ public class MainView extends JFrame {
         // Add main panel to frame
         add(mainPanel);
 
+        // Set default button for Enter key support
+        getRootPane().setDefaultButton(searchButton);
+
         // Add window listener for cleanup
         addWindowListener(new WindowAdapter() {
             @Override
