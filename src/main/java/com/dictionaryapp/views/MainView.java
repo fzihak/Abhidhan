@@ -40,6 +40,7 @@ public class MainView extends JFrame {
         // Top panel for search
         JPanel searchPanel = createSearchPanel();
         mainPanel.add(searchPanel, BorderLayout.NORTH);
+        getRootPane().setDefaultButton(searchButton);
 
         // Center panel for definitions
         JPanel definitionPanel = createDefinitionPanel();
