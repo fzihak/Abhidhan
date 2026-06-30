@@ -41,6 +41,9 @@ public class MainView extends JFrame {
         JPanel searchPanel = createSearchPanel();
         mainPanel.add(searchPanel, BorderLayout.NORTH);
 
+        // Enable standard keyboard submission UX for the search panel
+        getRootPane().setDefaultButton(searchButton);
+
         // Center panel for definitions
         JPanel definitionPanel = createDefinitionPanel();
         mainPanel.add(definitionPanel, BorderLayout.CENTER);
