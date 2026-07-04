@@ -72,11 +72,19 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search"); // Accessibility tooltip
         searchButton = new JButton("Search");
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
         
+        // Add delayed setting of default button since getRootPane() might be null during initialization
+        SwingUtilities.invokeLater(() -> {
+            if (getRootPane() != null) {
+                getRootPane().setDefaultButton(searchButton);
+            }
+        });
+
         return panel;
     }
 
