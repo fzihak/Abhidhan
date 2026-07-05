@@ -1,0 +1,3 @@
+## 2026-07-05 - Java Swing default button behavior
+**Learning:** In Java Swing views, unlike web forms, pressing 'Enter' in a text field does not automatically trigger the primary button. The keyboard accessibility needs to be enabled by explicitly setting the default button for the root pane using `getRootPane().setDefaultButton(button)`. This should be wrapped in `SwingUtilities.invokeLater()` to avoid NullPointerExceptions, as the root pane might be null during early initialization.
+**Action:** When adding form-like UI panels or dialogs in Java Swing, remember to use `SwingUtilities.invokeLater()` to correctly bind the primary submit button to the 'Enter' key.
