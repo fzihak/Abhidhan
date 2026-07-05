@@ -66,6 +66,13 @@ public class MainView extends JFrame {
                 controller.shutdown();
             }
         });
+
+        // Set default button to enable Enter key submission
+        SwingUtilities.invokeLater(() -> {
+            if (getRootPane() != null) {
+                getRootPane().setDefaultButton(searchButton);
+            }
+        });
     }
 
     private JPanel createSearchPanel() {
