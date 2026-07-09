@@ -59,6 +59,9 @@ public class MainView extends JFrame {
         // Add main panel to frame
         add(mainPanel);
 
+        // Set default button to trigger search on enter press
+        SwingUtilities.invokeLater(() -> getRootPane().setDefaultButton(searchButton));
+
         // Add window listener for cleanup
         addWindowListener(new WindowAdapter() {
             @Override
