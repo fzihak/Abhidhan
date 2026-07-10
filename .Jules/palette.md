@@ -1,0 +1,3 @@
+## 2024-05-15 - Java Swing Keyboard Navigation & Submission
+**Learning:** In Java Swing, pressing "Enter" in a text field does not automatically submit forms or trigger the primary button like it does on the web. Setting the root pane's default button is required for standard keyboard submission UX. Tooltips and mnemonics are equivalent to HTML ARIA attributes for screen readers and keyboard accessibility.
+**Action:** Always call `SwingUtilities.invokeLater(() -> getRootPane().setDefaultButton(primaryButton))` when initializing main views with search/submit fields to prevent NullPointerExceptions, and use `setToolTipText()` and `setMnemonic()` on interactive components for accessibility.
