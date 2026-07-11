@@ -66,13 +66,22 @@ public class MainView extends JFrame {
                 controller.shutdown();
             }
         });
+
+        SwingUtilities.invokeLater(() -> {
+            if (getRootPane() != null) {
+                getRootPane().setDefaultButton(searchButton);
+            }
+        });
     }
 
     private JPanel createSearchPanel() {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search");
         searchButton = new JButton("Search");
+        searchButton.setToolTipText("Search for the word");
+        searchButton.setMnemonic('S');
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
@@ -119,9 +128,20 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new FlowLayout(FlowLayout.LEFT, 5, 5));
         
         favoriteButton = new JButton("★ Favorite");
+        favoriteButton.setToolTipText("Toggle favorite status");
+        favoriteButton.setMnemonic('V');
+
         quizButton = new JButton("Start Quiz");
+        quizButton.setToolTipText("Start a new quiz");
+        quizButton.setMnemonic('Q');
+
         pronunciationButton = new JButton("🔊 Pronounce");
+        pronunciationButton.setToolTipText("Play pronunciation audio");
+        pronunciationButton.setMnemonic('P');
+
         languageToggle = new JToggleButton("EN/বাং");
+        languageToggle.setToolTipText("Toggle between English and Bengali UI");
+        languageToggle.setMnemonic('L');
         
         panel.add(favoriteButton);
         panel.add(pronunciationButton);
