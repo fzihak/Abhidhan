@@ -1,0 +1,3 @@
+## 2026-07-11 - Swing Default Button Initialization
+**Learning:** In Java Swing views, unlike web forms, pressing 'Enter' in a text field does not automatically trigger the primary button. Setting `getRootPane().setDefaultButton(button)` enables standard keyboard submission UX. However, calling this directly during early component initialization can result in a `NullPointerException` because the root pane might be null.
+**Action:** Always wrap `getRootPane().setDefaultButton(button)` calls in `SwingUtilities.invokeLater()` to prevent `NullPointerException`s and ensure the root pane is fully initialized.
