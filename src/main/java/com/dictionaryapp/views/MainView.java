@@ -59,6 +59,12 @@ public class MainView extends JFrame {
         // Add main panel to frame
         add(mainPanel);
 
+        // Add tooltip to search field for screen readers
+        searchField.setToolTipText("Type a word to search and press Enter");
+
+        // Set search button as default to trigger on 'Enter'
+        SwingUtilities.invokeLater(() -> getRootPane().setDefaultButton(searchButton));
+
         // Add window listener for cleanup
         addWindowListener(new WindowAdapter() {
             @Override
