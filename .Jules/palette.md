@@ -1,0 +1,3 @@
+## 2025-02-23 - Java Swing Form Submission Keyboard Accessibility
+**Learning:** In Java Swing desktop applications, unlike web forms, pressing 'Enter' in a text field does not automatically trigger the primary submit action.
+**Action:** Always use `getRootPane().setDefaultButton(button)` to enable standard keyboard submission UX. Wrap this call in `SwingUtilities.invokeLater()` to prevent `NullPointerException`s, as the root pane might be null during early component initialization.
