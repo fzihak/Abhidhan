@@ -66,6 +66,9 @@ public class MainView extends JFrame {
                 controller.shutdown();
             }
         });
+
+        // Set search button as default so pressing Enter in the search field triggers a search
+        SwingUtilities.invokeLater(() -> getRootPane().setDefaultButton(searchButton));
     }
 
     private JPanel createSearchPanel() {
