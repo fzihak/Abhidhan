@@ -66,6 +66,13 @@ public class MainView extends JFrame {
                 controller.shutdown();
             }
         });
+
+        // Set default button to allow pressing Enter to search
+        SwingUtilities.invokeLater(() -> {
+            if (getRootPane() != null && searchButton != null) {
+                getRootPane().setDefaultButton(searchButton);
+            }
+        });
     }
 
     private JPanel createSearchPanel() {
