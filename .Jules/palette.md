@@ -1,0 +1,3 @@
+## 2024-05-18 - Java Swing Enter Key Navigation
+**Learning:** In Java Swing views, unlike web forms, pressing 'Enter' in a text field does not automatically trigger the primary button.
+**Action:** Use `getRootPane().setDefaultButton(button)` to enable standard keyboard submission UX. Wrap this call in `SwingUtilities.invokeLater()` to prevent NullPointerExceptions, as the root pane might be null during early component initialization.
