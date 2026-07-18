@@ -1,0 +1,3 @@
+## 2024-06-25 - [Java Swing Default Button Submission]
+**Learning:** Unlike web forms where pressing 'Enter' inside an input automatically submits the form, Java Swing text fields do not automatically trigger the primary button.
+**Action:** Use `getRootPane().setDefaultButton(button)` to enable standard keyboard submission UX. Always wrap this call in `SwingUtilities.invokeLater()` to prevent NullPointerExceptions during early component initialization.
