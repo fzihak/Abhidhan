@@ -72,7 +72,12 @@ public class MainView extends JFrame {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search");
         searchButton = new JButton("Search");
+        searchButton.setToolTipText("Search for definition");
+
+        // Allow pressing Enter in the search field to trigger the search button
+        SwingUtilities.invokeLater(() -> getRootPane().setDefaultButton(searchButton));
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
