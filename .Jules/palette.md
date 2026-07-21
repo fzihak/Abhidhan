@@ -1,0 +1,3 @@
+## 2024-05-24 - Enable Keyboard Submission in Swing Views
+**Learning:** In Java Swing, pressing "Enter" in a text field does not automatically trigger the primary button like it does in web forms. You must explicitly set it using `getRootPane().setDefaultButton(button)`. Crucially, this must be wrapped in `SwingUtilities.invokeLater()` during UI initialization because `getRootPane()` might return `null` if the component hierarchy isn't fully realized yet, avoiding a `NullPointerException`.
+**Action:** Always check if primary forms/views in Swing applications have a default button set via `invokeLater` to ensure proper keyboard accessibility.
