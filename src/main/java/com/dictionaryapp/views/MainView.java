@@ -66,13 +66,19 @@ public class MainView extends JFrame {
                 controller.shutdown();
             }
         });
+
+        // Set search button as default so Enter key submits search
+        SwingUtilities.invokeLater(() -> getRootPane().setDefaultButton(searchButton));
     }
 
     private JPanel createSearchPanel() {
         JPanel panel = new JPanel(new BorderLayout(5, 0));
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
+        searchField.setToolTipText("Enter a word to search");
+
         searchButton = new JButton("Search");
+        searchButton.setToolTipText("Search for the word's definition");
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
