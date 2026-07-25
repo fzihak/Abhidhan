@@ -66,6 +66,9 @@ public class MainView extends JFrame {
                 controller.shutdown();
             }
         });
+
+        // Set search button as default button
+        SwingUtilities.invokeLater(() -> getRootPane().setDefaultButton(searchButton));
     }
 
     private JPanel createSearchPanel() {
@@ -73,6 +76,8 @@ public class MainView extends JFrame {
         searchField = new JTextField();
         searchField.setFont(new Font("Arial", Font.PLAIN, 14));
         searchButton = new JButton("Search");
+        searchButton.setToolTipText("Search for a word");
+        searchButton.setMnemonic(java.awt.event.KeyEvent.VK_S);
         
         panel.add(searchField, BorderLayout.CENTER);
         panel.add(searchButton, BorderLayout.EAST);
