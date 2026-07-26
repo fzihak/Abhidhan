@@ -66,6 +66,8 @@ public class MainView extends JFrame {
                 controller.shutdown();
             }
         });
+
+        SwingUtilities.invokeLater(() -> getRootPane().setDefaultButton(searchButton));
     }
 
     private JPanel createSearchPanel() {
